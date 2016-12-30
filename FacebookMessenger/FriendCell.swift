@@ -29,7 +29,7 @@ class FriendCell: BaseCell {
 
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Friend Name"
+        label.text = "Son Goku"
         label.font = UIFont.systemFontOfSize(18)
         return label
     }()
@@ -48,6 +48,15 @@ class FriendCell: BaseCell {
         label.font = UIFont.systemFontOfSize(16)
         label.textAlignment = .Right
         return label
+    }()
+
+    let hasReadImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.image = UIImage(named: "goku")
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        return imageView
     }()
 
     // MARK: Life Cycle Methods
@@ -88,10 +97,12 @@ class FriendCell: BaseCell {
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
+        containerView.addSubview(hasReadImageView)
         addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
         addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
-        addConstraintsWithFormat("H:|[v0]-12-|", views: messageLabel)
-        addConstraintsWithFormat("V:|[v0(20)]", views: timeLabel)
+        addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
+        addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
+        addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
 
     }
 }
