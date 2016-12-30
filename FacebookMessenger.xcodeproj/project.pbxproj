@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F29E73981E161C500034249E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73971E161C500034249E /* AppDelegate.swift */; };
-		F29E739A1E161C500034249E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73991E161C500034249E /* ViewController.swift */; };
-		F29E739D1E161C500034249E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29E739B1E161C500034249E /* Main.storyboard */; };
+		F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73991E161C500034249E /* FriendsViewController.swift */; };
 		F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F29E739E1E161C500034249E /* FacebookMessenger.xcdatamodeld */; };
 		F29E73A21E161C500034249E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29E73A11E161C500034249E /* Assets.xcassets */; };
 		F29E73A51E161C500034249E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29E73A31E161C500034249E /* LaunchScreen.storyboard */; };
@@ -29,8 +28,7 @@
 /* Begin PBXFileReference section */
 		F29E73941E161C500034249E /* FacebookMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29E73971E161C500034249E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F29E73991E161C500034249E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F29E739C1E161C500034249E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F29E73991E161C500034249E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F29E739F1E161C500034249E /* FacebookMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FacebookMessenger.xcdatamodel; sourceTree = "<group>"; };
 		F29E73A11E161C500034249E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F29E73A41E161C500034249E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,8 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F29E73971E161C500034249E /* AppDelegate.swift */,
-				F29E73991E161C500034249E /* ViewController.swift */,
-				F29E739B1E161C500034249E /* Main.storyboard */,
+				F29E73991E161C500034249E /* FriendsViewController.swift */,
 				F29E73A11E161C500034249E /* Assets.xcassets */,
 				F29E73A31E161C500034249E /* LaunchScreen.storyboard */,
 				F29E73A61E161C500034249E /* Info.plist */,
@@ -182,7 +179,6 @@
 			files = (
 				F29E73A51E161C500034249E /* LaunchScreen.storyboard in Resources */,
 				F29E73A21E161C500034249E /* Assets.xcassets in Resources */,
-				F29E739D1E161C500034249E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29E739A1E161C500034249E /* ViewController.swift in Sources */,
+				F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */,
 				F29E73981E161C500034249E /* AppDelegate.swift in Sources */,
 				F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */,
 			);
@@ -225,14 +221,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F29E739B1E161C500034249E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F29E739C1E161C500034249E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F29E73A31E161C500034249E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FriendsViewController.swift
 //  FacebookMessenger
 //
 //  Created by Ronald Hernandez on 12/29/16.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FriendsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.blueColor()
     }
 
     override func didReceiveMemoryWarning() {
