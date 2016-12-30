@@ -10,6 +10,8 @@ import UIKit
 
 class FriendCell: BaseCell {
 
+    //MARK: Properties
+
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
@@ -24,6 +26,31 @@ class FriendCell: BaseCell {
         view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
         return view
     }()
+
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Friend Name"
+        label.font = UIFont.systemFontOfSize(18)
+        return label
+    }()
+
+    let messageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your Friends Message and soemthing else ... "
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont.systemFontOfSize(14)
+        return label
+    }()
+
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "12:05 PM"
+        label.font = UIFont.systemFontOfSize(16)
+        label.textAlignment = .Right
+        return label
+    }()
+
+    // MARK: Life Cycle Methods
 
     override func setUpViews() {
         self.backgroundColor = UIColor.yellowColor()
@@ -52,8 +79,19 @@ class FriendCell: BaseCell {
         addSubview(containerView)
 
         addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)
-        addConstraintsWithFormat("V:[v0(60)]", views: containerView)
+        addConstraintsWithFormat("V:[v0(50)]", views: containerView)
         //center container view
         addConstraint(NSLayoutConstraint(item: containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+
+        // Name Label & MessageLabel
+
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(messageLabel)
+        containerView.addSubview(timeLabel)
+        addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
+        addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
+        addConstraintsWithFormat("H:|[v0]-12-|", views: messageLabel)
+        addConstraintsWithFormat("V:|[v0(20)]", views: timeLabel)
+
     }
 }
