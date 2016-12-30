@@ -16,8 +16,12 @@
 		F29E73BB1E1626AA0034249E /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73BA1E1626AA0034249E /* MessageCell.swift */; };
 		F29E73C01E1629170034249E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73BF1E1629170034249E /* BaseCell.swift */; };
 		F29E73C31E162FF50034249E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C21E162FF50034249E /* Extensions.swift */; };
-		F29E73C51E164B990034249E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C41E164B990034249E /* Message.swift */; };
-		F29E73C71E164BCF0034249E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C61E164BCF0034249E /* Friend.swift */; };
+		F29E73C51E164B990034249E /* Message2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C41E164B990034249E /* Message2.swift */; };
+		F29E73C71E164BCF0034249E /* Friend3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C61E164BCF0034249E /* Friend3.swift */; };
+		F29E73E11E16D1DF0034249E /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DD1E16D1DF0034249E /* Friend+CoreDataProperties.swift */; };
+		F29E73E21E16D1DF0034249E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DE1E16D1DF0034249E /* Friend.swift */; };
+		F29E73E31E16D1DF0034249E /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */; };
+		F29E73E41E16D1DF0034249E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E01E16D1DF0034249E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +48,13 @@
 		F29E73BA1E1626AA0034249E /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F29E73BF1E1629170034249E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		F29E73C21E162FF50034249E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F29E73C41E164B990034249E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		F29E73C61E164BCF0034249E /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		F29E73C41E164B990034249E /* Message2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message2.swift; sourceTree = "<group>"; };
+		F29E73C61E164BCF0034249E /* Friend3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend3.swift; sourceTree = "<group>"; };
+		F29E73C81E16D0690034249E /* FacebookMessenger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookMessenger-Bridging-Header.h"; sourceTree = "<group>"; };
+		F29E73DD1E16D1DF0034249E /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "../Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F29E73DE1E16D1DF0034249E /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = ../Friend.swift; sourceTree = "<group>"; };
+		F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "../Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F29E73E01E16D1DF0034249E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ../Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,7 @@
 				F29E73961E161C500034249E /* FacebookMessenger */,
 				F29E73AE1E161C500034249E /* FacebookMessengerTests */,
 				F29E73951E161C500034249E /* Products */,
+				F29E73C81E16D0690034249E /* FacebookMessenger-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,8 +139,12 @@
 		F29E73BE1E1626BD0034249E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F29E73C41E164B990034249E /* Message.swift */,
-				F29E73C61E164BCF0034249E /* Friend.swift */,
+				F29E73DD1E16D1DF0034249E /* Friend+CoreDataProperties.swift */,
+				F29E73DE1E16D1DF0034249E /* Friend.swift */,
+				F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */,
+				F29E73E01E16D1DF0034249E /* Message.swift */,
+				F29E73C41E164B990034249E /* Message2.swift */,
+				F29E73C61E164BCF0034249E /* Friend3.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,14 +257,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29E73E31E16D1DF0034249E /* Message+CoreDataProperties.swift in Sources */,
 				F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */,
 				F29E73C31E162FF50034249E /* Extensions.swift in Sources */,
+				F29E73E11E16D1DF0034249E /* Friend+CoreDataProperties.swift in Sources */,
 				F29E73981E161C500034249E /* AppDelegate.swift in Sources */,
 				F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */,
 				F29E73C01E1629170034249E /* BaseCell.swift in Sources */,
 				F29E73BB1E1626AA0034249E /* MessageCell.swift in Sources */,
-				F29E73C51E164B990034249E /* Message.swift in Sources */,
-				F29E73C71E164BCF0034249E /* Friend.swift in Sources */,
+				F29E73E21E16D1DF0034249E /* Friend.swift in Sources */,
+				F29E73E41E16D1DF0034249E /* Message.swift in Sources */,
+				F29E73C51E164B990034249E /* Message2.swift in Sources */,
+				F29E73C71E164BCF0034249E /* Friend3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,10 +391,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FacebookMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ronaldoh1.FacebookMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FacebookMessenger-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -384,10 +405,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FacebookMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ronaldoh1.FacebookMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FacebookMessenger-Bridging-Header.h";
 			};
 			name = Release;
 		};

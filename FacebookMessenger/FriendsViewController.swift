@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FriendsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -60,28 +61,88 @@ extension FriendsViewController {
 
     // MARK: Helper Methods
 
-    func setUpData() {
-        let miguel = Friend()
-        miguel.name = "Miguel Alvarez"
-        miguel.profileImageName = "vegeta"
+    func clearData() {
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
 
-        let message = Message()
-        message.friend = miguel
-        message.date = NSDate()
-        message.text = "I'm trying to turn up"
-        
-        let ronald = Friend()
-        ronald.name = "Miguel Alvarez"
-        ronald.profileImageName = "goku"
+        if let context = delegate?.managedObjectContext {
+            do {
+                let entityNames = ["Friend", "Message"]
+                for entityName in entityNames {
+                    let fetchRequest = NSFetchRequest(entityName: entityName)
+                    let objects = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+                    for object in objects! {
+                        context.deleteObject(object)
+                    }
+                }
 
-        let message2 = Message()
-        message2.friend = ronald
-        message2.date = NSDate()
-        message2.text = "Me too"
+                try(context.save())
 
-        messages = [message, message2]
-        
+            } catch let error {
+                print(error)
+            }
+        }
     }
-    
+
+    func setUpData() {
+        clearData()
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+
+        if let context = delegate?.managedObjectContext {
+            guard let miguel = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
+                return
+            }
+
+            miguel.name = "Miguel Alvarez"
+            miguel.profileImageName = "vegeta"
+
+
+           guard  let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as?  Message else {
+                return
+            }
+
+            message.friend = miguel
+            message.date = NSDate()
+            message.text = "I'm trying to turn up"
+
+            guard let ronald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
+                return
+            }
+            ronald.name = "Ronald Hernandez"
+            ronald.profileImageName = "goku"
+
+            guard let message2 = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {
+                return
+            }
+
+            message2.friend = ronald
+            message2.date = NSDate()
+            message2.text = "Me too"
+
+            do {
+                try context.save()
+            } catch let error {
+                print(error)
+            }
+
+        }
+
+        loadData()
+    }
+
+    func loadData() {
+
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+
+        if let context = delegate?.managedObjectContext {
+
+            let fetchRequest = NSFetchRequest(entityName: "Message")
+            do {
+                messages = try context.executeFetchRequest(fetchRequest) as? [Message]
+            }catch let error {
+                print(error)
+            }
+        }
+
+    }
 }
 
