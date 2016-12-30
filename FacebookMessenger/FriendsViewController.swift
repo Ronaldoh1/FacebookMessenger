@@ -18,6 +18,8 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
         collectionView!.backgroundColor = UIColor.blueColor()
 
         collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellID)
+
+        navigationItem.title = "Recent"
     }
 
 
