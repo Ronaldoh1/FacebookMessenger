@@ -122,6 +122,6 @@ class MessageCell: BaseCell {
         addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
         addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
         addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
-
+        
     }
 }

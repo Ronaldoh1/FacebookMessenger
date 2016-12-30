@@ -22,4 +22,5 @@ class BaseCell: UICollectionViewCell {
     func setUpViews(){
         self.backgroundColor = UIColor.yellowColor()
     }
+    
 }
