@@ -8,14 +8,13 @@
 
 import UIKit
 
-class FriendCell: BaseCell {
+class MessageCell: BaseCell {
 
     //MARK: Properties
 
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
-        imageView.image = UIImage(named: "goku")
         imageView.layer.cornerRadius = 34
         imageView.layer.masksToBounds = true
         return imageView
@@ -53,11 +52,27 @@ class FriendCell: BaseCell {
     let hasReadImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .ScaleAspectFill
-        imageView.image = UIImage(named: "goku")
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         return imageView
     }()
+
+    //MARK: Observing Properties
+
+    var message: Message? {
+        didSet {
+            nameLabel.text = message?.friend?.name
+            messageLabel.text = message?.text
+            timeLabel.text = message?.date?.description
+
+            guard let profileImage = message?.friend?.profileImageName else {
+                return
+            }
+
+            profileImageView.image = UIImage(named: profileImage)
+            hasReadImageView.image = UIImage(named: profileImage)
+        }
+    }
 
     // MARK: Life Cycle Methods
 

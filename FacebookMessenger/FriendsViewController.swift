@@ -12,16 +12,35 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
 
     private let cellID = "cellID"
 
+    private var messages: [Message]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.alwaysBounceVertical = true 
         collectionView!.backgroundColor = UIColor.blueColor()
 
-        collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView?.registerClass(MessageCell.self, forCellWithReuseIdentifier: cellID)
 
         navigationItem.title = "Recent"
+
+        setUpData()
     }
 
+    // MARK: Helper Methods 
+
+    func setUpData() {
+        let miguel = Friend()
+        miguel.name = "Miguel Alvarez"
+        miguel.profileImageName = "vegeta"
+
+        let message = Message()
+        message.friend = miguel
+        message.date = NSDate()
+
+
+        messages = [message]
+
+    }
 
     //MARK: UICollectionView DataSource
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -29,11 +48,17 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let count = messages?.count {
+         return count
+        }
+       return 0
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! FriendCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! MessageCell
+        if let message = messages?[indexPath.item] {
+            cell.message = message
+        }
 
         return cell
     }

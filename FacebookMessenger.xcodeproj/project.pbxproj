@@ -13,7 +13,7 @@
 		F29E73A21E161C500034249E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29E73A11E161C500034249E /* Assets.xcassets */; };
 		F29E73A51E161C500034249E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29E73A31E161C500034249E /* LaunchScreen.storyboard */; };
 		F29E73B01E161C500034249E /* FacebookMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73AF1E161C500034249E /* FacebookMessengerTests.swift */; };
-		F29E73BB1E1626AA0034249E /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73BA1E1626AA0034249E /* FriendCell.swift */; };
+		F29E73BB1E1626AA0034249E /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73BA1E1626AA0034249E /* MessageCell.swift */; };
 		F29E73C01E1629170034249E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73BF1E1629170034249E /* BaseCell.swift */; };
 		F29E73C31E162FF50034249E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C21E162FF50034249E /* Extensions.swift */; };
 		F29E73C51E164B990034249E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73C41E164B990034249E /* Message.swift */; };
@@ -41,7 +41,7 @@
 		F29E73AB1E161C500034249E /* FacebookMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29E73AF1E161C500034249E /* FacebookMessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMessengerTests.swift; sourceTree = "<group>"; };
 		F29E73B11E161C500034249E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F29E73BA1E1626AA0034249E /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		F29E73BA1E1626AA0034249E /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F29E73BF1E1629170034249E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		F29E73C21E162FF50034249E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F29E73C41E164B990034249E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		F29E73BC1E1626AF0034249E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F29E73BA1E1626AA0034249E /* FriendCell.swift */,
+				F29E73BA1E1626AA0034249E /* MessageCell.swift */,
 				F29E73BF1E1629170034249E /* BaseCell.swift */,
 			);
 			name = Views;
@@ -248,7 +248,7 @@
 				F29E73981E161C500034249E /* AppDelegate.swift in Sources */,
 				F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */,
 				F29E73C01E1629170034249E /* BaseCell.swift in Sources */,
-				F29E73BB1E1626AA0034249E /* FriendCell.swift in Sources */,
+				F29E73BB1E1626AA0034249E /* MessageCell.swift in Sources */,
 				F29E73C51E164B990034249E /* Message.swift in Sources */,
 				F29E73C71E164BCF0034249E /* Friend.swift in Sources */,
 			);
