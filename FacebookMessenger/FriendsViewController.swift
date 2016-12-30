@@ -55,6 +55,15 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
         return CGSizeMake(view.frame.width, 100)
     }
 
+    // MARK: UICollectionViewDelegate
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let layout = UICollectionViewFlowLayout()
+        let chatLogController = ChatLogController(collectionViewLayout: layout)
+        chatLogController.friend = messages![indexPath.item].friend
+        navigationController?.pushViewController(chatLogController, animated: true)
+    }
+
 }
 
 extension FriendsViewController {
@@ -96,13 +105,7 @@ extension FriendsViewController {
             miguel.profileImageName = "vegeta"
 
 
-           guard  let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as?  Message else {
-                return
-            }
-
-            message.friend = miguel
-            message.date = NSDate()
-            message.text = "I'm trying to turn up"
+           createMessageWithText("I'm trying to turn up...", friend: miguel, context: context, minutesAgo: 2)
 
             guard let ronald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
                 return
@@ -110,14 +113,18 @@ extension FriendsViewController {
             ronald.name = "Ronald Hernandez"
             ronald.profileImageName = "goku"
 
-            guard let message2 = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {
+           createMessageWithText("Good Morning...", friend: ronald, context: context, minutesAgo: 3)
+            createMessageWithText("Hello, how are you?", friend: ronald, context: context, minutesAgo: 3)
+            createMessageWithText("Are you interested in buying an Apple Device?", friend: ronald, context: context, minutesAgo: 1)
+
+
+            guard let donald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
                 return
             }
+            donald.name = "Donald Trump"
+            donald.profileImageName = "buu"
 
-            message2.friend = ronald
-            message2.date = NSDate()
-            message2.text = "Me too"
-
+            createMessageWithText("You're Fired!", friend: donald, context: context, minutesAgo: 0)
             do {
                 try context.save()
             } catch let error {
@@ -129,20 +136,61 @@ extension FriendsViewController {
         loadData()
     }
 
+    func createMessageWithText(text: String, friend: Friend, context: NSManagedObjectContext, minutesAgo: Double) {
+        guard let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {
+            return
+        }
+
+        message.friend = friend
+        message.date = NSDate().dateByAddingTimeInterval(minutesAgo * 60)
+        message.text = text
+    }
+
     func loadData() {
 
         let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
 
         if let context = delegate?.managedObjectContext {
 
-            let fetchRequest = NSFetchRequest(entityName: "Message")
+            guard let friends = fetchFriends() else {
+                return
+            }
+
+            messages = [Message]()
+
+            for friend in friends {
+                print(friend.name)
+                let fetchRequest = NSFetchRequest(entityName: "Message")
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+                fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
+                fetchRequest.fetchLimit = 1
+                do {
+                    let fetchedMessages = try context.executeFetchRequest(fetchRequest) as? [Message]
+                    messages?.appendContentsOf(fetchedMessages!)
+
+                }catch let error {
+                    print(error)
+                }
+            }
+            messages = messages?.sort({ $0.date!.compare($1.date!) == .OrderedDescending})
+        }
+    }
+
+    func fetchFriends() -> [Friend]? {
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+
+        if let context = delegate?.managedObjectContext {
+            let request = NSFetchRequest(entityName: "Friend")
             do {
-                messages = try context.executeFetchRequest(fetchRequest) as? [Message]
-            }catch let error {
+
+               return try context.executeFetchRequest(request) as? [Friend]
+
+            } catch let error {
                 print(error)
             }
         }
 
+        return nil
     }
 }
 

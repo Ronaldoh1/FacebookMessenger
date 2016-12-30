@@ -22,6 +22,7 @@
 		F29E73E21E16D1DF0034249E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DE1E16D1DF0034249E /* Friend.swift */; };
 		F29E73E31E16D1DF0034249E /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */; };
 		F29E73E41E16D1DF0034249E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E01E16D1DF0034249E /* Message.swift */; };
+		F29E73E61E16F3550034249E /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E51E16F3550034249E /* ChatLogController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F29E73DE1E16D1DF0034249E /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = ../Friend.swift; sourceTree = "<group>"; };
 		F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "../Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F29E73E01E16D1DF0034249E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ../Message.swift; sourceTree = "<group>"; };
+		F29E73E51E16F3550034249E /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F29E73991E161C500034249E /* FriendsViewController.swift */,
+				F29E73E51E16F3550034249E /* ChatLogController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				F29E73E21E16D1DF0034249E /* Friend.swift in Sources */,
 				F29E73E41E16D1DF0034249E /* Message.swift in Sources */,
 				F29E73C51E164B990034249E /* Message2.swift in Sources */,
+				F29E73E61E16F3550034249E /* ChatLogController.swift in Sources */,
 				F29E73C71E164BCF0034249E /* Friend3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
