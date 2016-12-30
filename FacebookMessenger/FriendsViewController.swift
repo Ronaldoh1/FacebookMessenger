@@ -8,18 +8,39 @@
 
 import UIKit
 
-class FriendsViewController: UICollectionViewController {
+class FriendsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    private let cellID = "cellID"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.blueColor()
+        collectionView?.alwaysBounceVertical = true 
+        collectionView!.backgroundColor = UIColor.blueColor()
+
+        collectionView?.registerClass(FriendCell.self, forCellWithReuseIdentifier: cellID)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    //MARK: UICollectionView DataSource
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
     }
 
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! FriendCell
+
+        return cell
+    }
+
+    //MARK: UICollectionViewDelegateFlowLayout
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(view.frame.width, 100)
+    }
 
 }
 
