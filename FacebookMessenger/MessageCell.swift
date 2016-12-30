@@ -63,7 +63,11 @@ class MessageCell: BaseCell {
         didSet {
             nameLabel.text = message?.friend?.name
             messageLabel.text = message?.text
-            timeLabel.text = message?.date?.description
+            if let date = message?.date {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "h:mm a"
+                timeLabel.text = dateFormatter.stringFromDate(date)
+            }
 
             guard let profileImage = message?.friend?.profileImageName else {
                 return
