@@ -103,7 +103,6 @@ class MessageCell: BaseCell {
 
     private func setupContainerView() {
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.redColor()
         addSubview(containerView)
 
         addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)

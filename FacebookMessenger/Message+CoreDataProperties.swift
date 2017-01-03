@@ -2,8 +2,8 @@
 //  Message+CoreDataProperties.swift
 //  FacebookMessenger
 //
-//  Created by Ronald Hernandez on 12/30/16.
-//  Copyright © 2016 Ronaldoh1. All rights reserved.
+//  Created by Ronald Hernandez on 1/2/17.
+//  Copyright © 2017 Ronaldoh1. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -16,6 +16,7 @@ extension Message {
 
     @NSManaged var date: NSDate?
     @NSManaged var text: String?
+    @NSManaged var isSender: NSNumber?
     @NSManaged var friend: Friend?
 
 }

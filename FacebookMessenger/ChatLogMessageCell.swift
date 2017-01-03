@@ -12,19 +12,25 @@ class ChatLogMessageCell: BaseCell {
 
     lazy var messageTextView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont.systemFontOfSize(16)
-        textView.text = "sample text"
-        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = UIFont.systemFontOfSize(18)
+        textView.text = "Sample Text"
+        textView.backgroundColor = UIColor.clearColor()
 
         return textView
     }()
 
+    let textBubbleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        view.layer.cornerRadius = 15
+        view.layer.masksToBounds = true
+        return view
+    }()
+
     override func setUpViews() {
         super.setUpViews()
-        self.backgroundColor = UIColor.orangeColor()
 
+        addSubview(textBubbleView)
         addSubview(messageTextView)
-        addConstraintsWithFormat("H:|[v0]|", views: messageTextView)
-        addConstraintsWithFormat("V:|[v0]|", views: messageTextView)
     }
 }

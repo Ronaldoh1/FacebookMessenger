@@ -18,7 +18,6 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.alwaysBounceVertical = true
-        collectionView!.backgroundColor = UIColor.blueColor()
 
         collectionView?.registerClass(MessageCell.self, forCellWithReuseIdentifier: cellID)
 
@@ -107,15 +106,8 @@ extension FriendsViewController {
 
            createMessageWithText("I'm trying to turn up...", friend: miguel, context: context, minutesAgo: 2)
 
-            guard let ronald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
-                return
-            }
-            ronald.name = "Ronald Hernandez"
-            ronald.profileImageName = "goku"
+            createRonaldMessageWithContext(context)
 
-           createMessageWithText("Good Morning...", friend: ronald, context: context, minutesAgo: 3)
-            createMessageWithText("Hello, how are you?", friend: ronald, context: context, minutesAgo: 3)
-            createMessageWithText("Are you interested in buying an Apple Device?", friend: ronald, context: context, minutesAgo: 1)
 
 
             guard let donald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
@@ -134,6 +126,21 @@ extension FriendsViewController {
         }
 
         loadData()
+    }
+
+    func createRonaldMessageWithContext(context: NSManagedObjectContext) {
+        guard let ronald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
+            return
+        }
+        ronald.name = "Ronald Hernandez"
+        ronald.profileImageName = "goku"
+
+        createMessageWithText("Good Morning...It's finally Monday. The day has come", friend: ronald, context: context, minutesAgo: 3)
+        createMessageWithText("Hello, how are you? hope you're having a good morning? It's great outside", friend: ronald, context: context, minutesAgo: 3)
+        createMessageWithText("Are you interested in buying an Apple Device? We have a wide variety of apple devices that will suit your needs.", friend: ronald, context: context, minutesAgo: 1)
+
+        //Response:
+        createMessageWithText("I'm doing terrific", friend: ronald, context: context, minutesAgo: 1)
     }
 
     func createMessageWithText(text: String, friend: Friend, context: NSManagedObjectContext, minutesAgo: Double) {
