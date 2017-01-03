@@ -21,7 +21,7 @@ class ChatLogMessageCell: BaseCell {
 
     let textBubbleView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
+//        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
         return view
@@ -35,6 +35,16 @@ class ChatLogMessageCell: BaseCell {
         return imageView
     }()
 
+    let bubbleImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ChatLogMessageCell.grayBubble
+        imageView.tintColor = UIColor(white: 0.90, alpha: 1)
+        return imageView
+    }()
+
+    static let grayBubble = UIImage(named: "bubble_gray")?.resizableImageWithCapInsets(UIEdgeInsetsMake(22,26,22,26)).imageWithRenderingMode(.AlwaysTemplate)
+    static  let blueBubble = UIImage(named: "bubble_blue")?.resizableImageWithCapInsets(UIEdgeInsetsMake(22,26,22,26)).imageWithRenderingMode(.AlwaysTemplate)
+
     override func setUpViews() {
         super.setUpViews()
 
@@ -42,8 +52,16 @@ class ChatLogMessageCell: BaseCell {
         addSubview(messageTextView)
         addSubview(profileImageView)
 
+
         addConstraintsWithFormat("H:|[v0(30)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
         profileImageView.backgroundColor = UIColor.blueColor()
+
+        //add bubbles 
+        textBubbleView.addSubview(bubbleImageView)
+
+        addConstraintsWithFormat("H:|[v0]|", views: bubbleImageView)
+        addConstraintsWithFormat("V:|[v0]|", views: bubbleImageView)
+
     }
 }

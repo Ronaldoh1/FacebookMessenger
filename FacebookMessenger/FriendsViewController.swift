@@ -141,10 +141,12 @@ extension FriendsViewController {
         createMessageWithText("Are you interested in buying an Apple Device? We have a wide variety of apple devices that will suit your needs.", friend: ronald, context: context, minutesAgo: 1)
 
         //Response:
-        createMessageWithText("I'm doing terrific", friend: ronald, context: context, minutesAgo: 1)
+        createMessageWithText("I'm doing terrific", friend: ronald, context: context, minutesAgo: 1, isSender: true)
+       createMessageWithText("I really want to go out dont have time think about phones", friend: ronald, context: context, minutesAgo: 1, isSender: true)
+        createMessageWithText("I also want to turn up", friend: ronald, context: context, minutesAgo: 1, isSender: false)
     }
 
-    func createMessageWithText(text: String, friend: Friend, context: NSManagedObjectContext, minutesAgo: Double) {
+    func createMessageWithText(text: String, friend: Friend, context: NSManagedObjectContext, minutesAgo: Double, isSender: Bool = false) {
         guard let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {
             return
         }
@@ -152,6 +154,7 @@ extension FriendsViewController {
         message.friend = friend
         message.date = NSDate().dateByAddingTimeInterval(minutesAgo * 60)
         message.text = text
+        message.isSender = NSNumber(bool: isSender)
     }
 
     func loadData() {
