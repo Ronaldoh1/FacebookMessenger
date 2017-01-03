@@ -27,10 +27,23 @@ class ChatLogMessageCell: BaseCell {
         return view
     }()
 
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.layer.cornerRadius = 15
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+
     override func setUpViews() {
         super.setUpViews()
 
         addSubview(textBubbleView)
         addSubview(messageTextView)
+        addSubview(profileImageView)
+
+        addConstraintsWithFormat("H:|[v0(30)]", views: profileImageView)
+        addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
+        profileImageView.backgroundColor = UIColor.blueColor()
     }
 }

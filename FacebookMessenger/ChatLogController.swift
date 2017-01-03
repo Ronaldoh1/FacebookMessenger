@@ -44,16 +44,23 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as!ChatLogMessageCell
         cell.messageTextView.text = messages?[indexPath.item].text
 
+        if let imageName = messages?[indexPath.item].friend?.profileImageName {
+            cell.profileImageView.image = UIImage(named: imageName)
+        }
 
         if let messageText = messages?[indexPath.item].text {
             let size = CGSizeMake(250, 1000)
             let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(18)], context: nil)
-            cell.messageTextView.frame = CGRectMake(8, 0, estimatedFrame.width + 16 + 16, estimatedFrame.height + 20)
-            cell.textBubbleView.frame = CGRectMake(0, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
+            cell.messageTextView.frame = CGRectMake(40, 0, estimatedFrame.width + 16 + 16, estimatedFrame.height + 20)
+            cell.textBubbleView.frame = CGRectMake(40, 0, estimatedFrame.width + 16 + 8, estimatedFrame.height + 20)
         }
 
         return cell
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(8, 0, 0, 0)
     }
 
     // MARK: Cell Layout

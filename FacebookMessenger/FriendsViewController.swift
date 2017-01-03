@@ -20,6 +20,7 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
         collectionView?.alwaysBounceVertical = true
 
         collectionView?.registerClass(MessageCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView?.backgroundColor = UIColor.whiteColor()
 
         navigationItem.title = "Recent"
 

@@ -81,7 +81,6 @@ class MessageCell: BaseCell {
     // MARK: Life Cycle Methods
 
     override func setUpViews() {
-        self.backgroundColor = UIColor.yellowColor()
 
         self.addSubview(profileImageView)
         self.addSubview(dividerLineView)
