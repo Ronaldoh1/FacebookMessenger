@@ -23,6 +23,7 @@
 		F29E73E31E16D1DF0034249E /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */; };
 		F29E73E41E16D1DF0034249E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E01E16D1DF0034249E /* Message.swift */; };
 		F29E73E61E16F3550034249E /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E51E16F3550034249E /* ChatLogController.swift */; };
+		F29E73E81E1AFDB10034249E /* ChatLogMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73E71E1AFDB10034249E /* ChatLogMessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		F29E73DF1E16D1DF0034249E /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "../Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F29E73E01E16D1DF0034249E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ../Message.swift; sourceTree = "<group>"; };
 		F29E73E51E16F3550034249E /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		F29E73E71E1AFDB10034249E /* ChatLogMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogMessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				F29E73BA1E1626AA0034249E /* MessageCell.swift */,
 				F29E73BF1E1629170034249E /* BaseCell.swift */,
+				F29E73E71E1AFDB10034249E /* ChatLogMessageCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				F29E73E31E16D1DF0034249E /* Message+CoreDataProperties.swift in Sources */,
 				F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */,
+				F29E73E81E1AFDB10034249E /* ChatLogMessageCell.swift in Sources */,
 				F29E73C31E162FF50034249E /* Extensions.swift in Sources */,
 				F29E73E11E16D1DF0034249E /* Friend+CoreDataProperties.swift in Sources */,
 				F29E73981E161C500034249E /* AppDelegate.swift in Sources */,
@@ -461,6 +465,7 @@
 				F29E73B61E161C500034249E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F29E73B71E161C500034249E /* Build configuration list for PBXNativeTarget "FacebookMessengerTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				F29E73B91E161C500034249E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
