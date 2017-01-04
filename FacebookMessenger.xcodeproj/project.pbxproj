@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F24DD2881E1CA38A00B0E037 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DD2871E1CA38A00B0E037 /* CustomTabBarController.swift */; };
+		F24DD28A1E1CA54A00B0E037 /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DD2891E1CA54A00B0E037 /* CallsViewController.swift */; };
+		F24DD28C1E1CA56400B0E037 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DD28B1E1CA56400B0E037 /* PeopleViewController.swift */; };
+		F24DD28E1E1CA57100B0E037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DD28D1E1CA57100B0E037 /* SettingsViewController.swift */; };
+		F24DD2911E1CA58400B0E037 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DD2901E1CA58400B0E037 /* GroupsViewController.swift */; };
 		F29E73981E161C500034249E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73971E161C500034249E /* AppDelegate.swift */; };
 		F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E73991E161C500034249E /* FriendsViewController.swift */; };
 		F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F29E739E1E161C500034249E /* FacebookMessenger.xcdatamodeld */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F24DD2871E1CA38A00B0E037 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		F24DD2891E1CA54A00B0E037 /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
+		F24DD28B1E1CA56400B0E037 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		F24DD28D1E1CA57100B0E037 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F24DD2901E1CA58400B0E037 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		F29E73941E161C500034249E /* FacebookMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29E73971E161C500034249E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29E73991E161C500034249E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +148,11 @@
 			children = (
 				F29E73991E161C500034249E /* FriendsViewController.swift */,
 				F29E73E51E16F3550034249E /* ChatLogController.swift */,
+				F24DD2871E1CA38A00B0E037 /* CustomTabBarController.swift */,
+				F24DD2891E1CA54A00B0E037 /* CallsViewController.swift */,
+				F24DD28B1E1CA56400B0E037 /* PeopleViewController.swift */,
+				F24DD28D1E1CA57100B0E037 /* SettingsViewController.swift */,
+				F24DD2901E1CA58400B0E037 /* GroupsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -265,18 +280,23 @@
 			files = (
 				F29E739A1E161C500034249E /* FriendsViewController.swift in Sources */,
 				F29E73E81E1AFDB10034249E /* ChatLogMessageCell.swift in Sources */,
+				F24DD28A1E1CA54A00B0E037 /* CallsViewController.swift in Sources */,
+				F24DD2881E1CA38A00B0E037 /* CustomTabBarController.swift in Sources */,
 				F29E73C31E162FF50034249E /* Extensions.swift in Sources */,
 				F29E73E11E16D1DF0034249E /* Friend+CoreDataProperties.swift in Sources */,
 				F29E73ED1E1B53190034249E /* Message+CoreDataProperties.swift in Sources */,
 				F29E73981E161C500034249E /* AppDelegate.swift in Sources */,
 				F29E73A01E161C500034249E /* FacebookMessenger.xcdatamodeld in Sources */,
 				F29E73C01E1629170034249E /* BaseCell.swift in Sources */,
+				F24DD28C1E1CA56400B0E037 /* PeopleViewController.swift in Sources */,
 				F29E73BB1E1626AA0034249E /* MessageCell.swift in Sources */,
 				F29E73E21E16D1DF0034249E /* Friend.swift in Sources */,
 				F29E73C51E164B990034249E /* Message2.swift in Sources */,
 				F29E73EE1E1B53190034249E /* Message.swift in Sources */,
+				F24DD2911E1CA58400B0E037 /* GroupsViewController.swift in Sources */,
 				F29E73E61E16F3550034249E /* ChatLogController.swift in Sources */,
 				F29E73C71E164BCF0034249E /* Friend3.swift in Sources */,
+				F24DD28E1E1CA57100B0E037 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
