@@ -118,6 +118,14 @@ extension FriendsViewController {
             donald.profileImageName = "buu"
 
             createMessageWithText("You're Fired!", friend: donald, context: context, minutesAgo: 0)
+
+            guard let superRonald = NSEntityDescription.insertNewObjectForEntityForName("Friend", inManagedObjectContext: context) as?  Friend else {
+                return
+            }
+            superRonald.name = "Super Ronadl"
+            superRonald.profileImageName = "me"
+            createMessageWithText("Love, Peace and Joy", friend: superRonald, context: context, minutesAgo: 60 * 24)
+
             do {
                 try context.save()
             } catch let error {
@@ -144,6 +152,8 @@ extension FriendsViewController {
         createMessageWithText("I'm doing terrific", friend: ronald, context: context, minutesAgo: 1, isSender: true)
        createMessageWithText("I really want to go out dont have time think about phones", friend: ronald, context: context, minutesAgo: 1, isSender: true)
         createMessageWithText("I also want to turn up", friend: ronald, context: context, minutesAgo: 1, isSender: false)
+
+        
     }
 
     func createMessageWithText(text: String, friend: Friend, context: NSManagedObjectContext, minutesAgo: Double, isSender: Bool = false) {

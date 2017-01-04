@@ -59,6 +59,15 @@ class MessageCell: BaseCell {
 
     //MARK: Observing Properties
 
+    override var highlighted: Bool {
+        didSet {
+            backgroundColor = highlighted ? UIColor(red: 0, green: 134/255, blue: 249/255, alpha: 1) : UIColor.whiteColor()
+            nameLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+            timeLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+            messageLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.blackColor()
+        }
+    }
+
     var message: Message? {
         didSet {
             nameLabel.text = message?.friend?.name
@@ -66,6 +75,15 @@ class MessageCell: BaseCell {
             if let date = message?.date {
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "h:mm a"
+                let elapsedTimeInSeconds = NSDate().timeIntervalSinceDate(date)
+                let secondInDays: NSTimeInterval = 60 * 60 * 24
+
+                if elapsedTimeInSeconds > 7 * secondInDays {
+                    dateFormatter.dateFormat = "MM/dd/yy"
+                } else if elapsedTimeInSeconds > secondInDays {
+                    dateFormatter.dateFormat = "EEE"
+                }
+
                 timeLabel.text = dateFormatter.stringFromDate(date)
             }
 
