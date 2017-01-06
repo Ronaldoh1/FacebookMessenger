@@ -15,6 +15,12 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
 
     private var messages: [Message]?
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tabBarController?.tabBar.hidden = false
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.alwaysBounceVertical = true
