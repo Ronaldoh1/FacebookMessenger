@@ -146,7 +146,6 @@
 		F29E73BD1E1626B70034249E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F29E73991E161C500034249E /* FriendsViewController.swift */,
 				F29E73E51E16F3550034249E /* ChatLogController.swift */,
 				F24DD2871E1CA38A00B0E037 /* CustomTabBarController.swift */,
 				F24DD2891E1CA54A00B0E037 /* CallsViewController.swift */,
@@ -164,6 +163,7 @@
 				F29E73DE1E16D1DF0034249E /* Friend.swift */,
 				F29E73C41E164B990034249E /* Message2.swift */,
 				F29E73C61E164BCF0034249E /* Friend3.swift */,
+				F29E73991E161C500034249E /* FriendsViewController.swift */,
 				F29E73EB1E1B53190034249E /* Message+CoreDataProperties.swift */,
 				F29E73EC1E1B53190034249E /* Message.swift */,
 			);

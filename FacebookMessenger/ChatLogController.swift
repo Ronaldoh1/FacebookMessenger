@@ -31,12 +31,13 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return textField
     }()
 
-    let sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("Send", forState: .Normal)
         let titleColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
         button.setTitleColor(titleColor, forState: .Normal)
         button.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+        button.addTarget(self, action: #selector(handleSend) , forControlEvents: .TouchUpInside)
         return button
     }()
 
@@ -64,6 +65,34 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardNotification), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardNotification), name: UIKeyboardWillHideNotification, object: nil)
 
+    }
+
+    func handleSend() {
+        //insert into Core Data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+       let message =  FriendsViewController.createMessageWithText(inputTextField.text!, friend: friend!, context: context, minutesAgo: 0, isSender: true)
+        do {
+            try context.save()
+
+
+            //update the collectionView after inserting it.
+
+            messages?.append(message)
+            let indexPath = NSIndexPath(forItem: messages!.count - 1, inSection: 0  )
+            collectionView?.insertItemsAtIndexPaths([indexPath])
+
+            // scroll tableview to top 
+            collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+
+            // remove the text from the textfield 
+
+            inputTextField.text = nil 
+
+        } catch let error {
+            print(error)
+        }
+        
     }
 
     func handleKeyboardNotification(notification: NSNotification) {
